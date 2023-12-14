@@ -27,7 +27,10 @@ const verifyUser = (req, res, next) => {
   console.log(token);
 };
 
-app.get("/home", verifyUser, (req, res) => {});
+app.get("/home", async(req, res) => {
+  let user = await UserModel.find()
+  res.json(User)
+});
 
 app.post("/login", (req, res) => {
   const { email, password } = req.body;
