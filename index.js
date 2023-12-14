@@ -29,7 +29,7 @@ const verifyUser = (req, res, next) => {
 
 app.get("/home", async(req, res) => {
   let user = await UserModel.find()
-  res.json(User)
+  res.json(user)
 });
 
 app.post("/login", (req, res) => {
