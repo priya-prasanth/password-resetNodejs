@@ -115,10 +115,10 @@ app.post("/forgot-password", (req, res) => {
       from: "priyaprasanth168@gmail.com",
       to: "priyaprasanth168@gmail.com",
       subject: "Reset password Link",
-      text: `https://sparkling-nasturtium-42c08b.netlify.app/reset_password/${user._id}/${token}`,
+      text: `http://sparkling-nasturtium-42c08b.netlify.app/reset_password/${user._id}/${token}`,
     };
 
-    transporter.sendMail(mailOptions, function (error, info) {
+    https: transporter.sendMail(mailOptions, function (error, info) {
       if (error) {
         console.log(error);
       } else {
