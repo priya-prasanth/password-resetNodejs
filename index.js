@@ -13,7 +13,7 @@ const app = express();
 app.use(express.json());
 app.use(
   cors({
-    origin: ["http://localhost:5173"],
+    origin: ["https://sparkling-nasturtium-42c08b.netlify.app"],
     methods: ["GET", "POST"],
     credentials: true,
   })
@@ -27,9 +27,9 @@ const verifyUser = (req, res, next) => {
   console.log(token);
 };
 
-app.get("/home", async(req, res) => {
-  let user = await UserModel.find()
-  res.json(user)
+app.get("/home", async (req, res) => {
+  let user = await UserModel.find();
+  res.json(user);
 });
 
 app.post("/login", (req, res) => {
